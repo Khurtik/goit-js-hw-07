@@ -1,14 +1,5 @@
 'use strict';
 let inputValue;
-let randomColor =
-  'rgb(' +
-  Math.floor(Math.random() * 256) +
-  ',' +
-  Math.floor(Math.random() * 256) +
-  ',' +
-  Math.floor(Math.random() * 256) +
-  ')';
-// let color = getRandomColor();
 const controls = document.querySelector('#controls');
 const boxes = document.querySelector('#boxes');
 const btnRender = document.querySelector('button[data-action="render"]');
@@ -33,21 +24,18 @@ function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
     const div = document.createElement('div');
     boxes.append(div);
-    console.log(boxes);
     div.style.width = width + i * step + 'px';
     div.style.height = div.style.width;
-    div.style.backgroundColor = randomColor;
+    div.style.marginBottom = '3px';
+    div.style.backgroundColor =
+      'rgb(' +
+      Math.floor(Math.random() * 256) +
+      ',' +
+      Math.floor(Math.random() * 256) +
+      ',' +
+      Math.floor(Math.random() * 256) +
+      ')';
     arr.push(div.outerHTML);
   }
   arr = arr.join('');
 }
-// console.log(boxes);
-
-// function getRandomColor() {
-//   let letters = '0123456789ABCDEF';
-//   let color = '#';
-//   for (let i = 0; i < 6; i++) {
-//     color += letters[Math.floor(Math.random() * 16)];
-//   }
-//   return color;
-// }
