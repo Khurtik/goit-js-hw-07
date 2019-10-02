@@ -10,10 +10,8 @@ const ingredients = [
 ];
 
 const listIngredients = document.querySelector('#ingredients');
-
-for (let i = 0; i < ingredients.length; i++) {
+ingredients.map(item => {
   const createLi = document.createElement('li');
-  createLi.append(ingredients[i]);
+  createLi.insertAdjacentHTML('afterbegin', item);
   listIngredients.appendChild(createLi);
-}
-console.log(listIngredients);
+});

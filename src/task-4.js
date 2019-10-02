@@ -6,10 +6,8 @@ const value = document.querySelector('#value');
 let counterValue = 0;
 
 increment.addEventListener('click', event => {
-  counterValue = counterValue + 1;
-  value.innerHTML = counterValue;
+  value.innerHTML = counterValue++;
 });
 decrement.addEventListener('click', event => {
-  counterValue = counterValue - 1;
-  value.innerHTML = counterValue;
+  value.innerHTML = counterValue--;
 });
